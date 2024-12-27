@@ -11,6 +11,7 @@ import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
+import org.jaudiotagger.tag.KeyNotFoundException;
 import org.jaudiotagger.tag.id3.ID3v23Tag;
 import org.jaudiotagger.tag.images.Artwork;
 
@@ -504,7 +505,7 @@ public final class Utils
 			tag.setField(FieldKey.RATING, rating);
 			
 		}
-		catch (TagException e)
+		catch (TagException | KeyNotFoundException e)
 		{
 			LOG.log(Level.SEVERE, "Error reading/creating tag: " + filePath);
 		}
