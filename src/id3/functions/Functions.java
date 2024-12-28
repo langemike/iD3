@@ -1416,7 +1416,7 @@ public final class Functions
 			Utils.saveTagToFile(entry, tag);
 			LOG.log(Level.FINE, "Rating saved to tag: " + tag.toString());
 		}
-		catch (TagException e)
+		catch (KeyNotFoundException | TagException e)
 		{
 			LOG.log(Level.WARNING, "Failed to add Rating to tag");
 		}
